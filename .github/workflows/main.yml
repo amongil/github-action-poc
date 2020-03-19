@@ -13,10 +13,9 @@ jobs:
       with:
         who-to-greet: ${{ job.status }}
     - name: Github repository
-        id: repo
-        uses: amongil/gh-action-push-result-to-azure-queue@v1
-        with:
-          who-to-greet: $GITHUB_REPOSITORY
-    # Use the output from the `hello` step
+      id: repo
+      uses: amongil/gh-action-push-result-to-azure-queue@v1
+      with:
+        who-to-greet: $GITHUB_REPOSITORY
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
