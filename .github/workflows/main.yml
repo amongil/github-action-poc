@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: amongil/gh-action-push-result-to-azure-queue@latest
+      uses: amongil/gh-action-push-result-to-azure-queue@v1
       with:
         who-to-greet: 'Ted Kaczynski'
     # Use the output from the `hello` step
