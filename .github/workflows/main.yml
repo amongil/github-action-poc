@@ -9,10 +9,13 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: amongil/gh-action-push-result-to-azure-queue@v4
+      uses: amongil/gh-action-push-result-to-azure-queue@v5
       with:
         who-to-greet: ${{ job.status }}
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
-
+    - name: Get the repo name
+      run: echo "The repo name is ${{ steps.hello.outputs.repository }}"
+    - name: Get the run number
+      run: echo "The workflow run number is ${{ steps.hello.outputs.run_number }}"
 
