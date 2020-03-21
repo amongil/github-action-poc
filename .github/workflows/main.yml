@@ -9,8 +9,8 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: amongil/gh-action-push-result-to-azure-queue@v7
+      uses: amongil/gh-action-push-result-to-azure-queue@v8
       with:
-        job-status: ${{ job.status }}
+        JOB_STATUS: ${{ job.status }}
     - name: Get the data sent
       run: echo "The data sent was ${{ steps.hello.outputs.data-sent }}"
