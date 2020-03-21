@@ -16,4 +16,4 @@ jobs:
         QUEUE_NAME: alvaroqueue
         JOB_STATUS: ${{ job.status }}
     - name: Get the data sent
-      run: echo "The data sent was ${{ steps.hello.outputs.data-sent }}"
+      run: echo "The data sent was ${{ steps.send-job-status-to-azure-queue.outputs.data-sent }}"
