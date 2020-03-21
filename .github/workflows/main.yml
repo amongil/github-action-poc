@@ -5,12 +5,15 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to test the result action to azure queue
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: amongil/gh-action-push-result-to-azure-queue@v8
+    - name: Send job status with metadata to AzureQueue
+      id: send-job-status-to-azure-queue
+      uses: amongil/gh-action-push-result-to-azure-queue@v9
       with:
+        STORAGE_ACCOUNT_NAME: alvarostorageaccount1234
+        STORAGE_ACCOUNT_KEY: ${{ secrets.AZURE_ACTION_STORAGE_ACCOUNT_KEY}}
+        QUEUE_NAME: alvaroqueue
         JOB_STATUS: ${{ job.status }}
     - name: Get the data sent
       run: echo "The data sent was ${{ steps.hello.outputs.data-sent }}"
