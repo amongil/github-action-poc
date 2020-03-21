@@ -11,6 +11,6 @@ jobs:
       id: hello
       uses: amongil/gh-action-push-result-to-azure-queue@v7
       with:
-        who-to-greet: ${{ job.status }}
+        job-status: ${{ job.status }}
     - name: Get the data sent
-      run: echo "The time was ${{ steps.hello.outputs.data-sent }}"
+      run: echo "The data sent was ${{ steps.hello.outputs.data-sent }}"
