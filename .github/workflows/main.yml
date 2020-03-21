@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: amongil/gh-action-push-result-to-azure-queue@v6
+      uses: amongil/gh-action-push-result-to-azure-queue@v7
       with:
         who-to-greet: ${{ job.status }}
     - name: Get the data sent
