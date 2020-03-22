@@ -15,5 +15,5 @@ jobs:
         STORAGE_ACCOUNT_KEY: ${{ secrets.AZURE_ACTION_STORAGE_ACCOUNT_KEY}}
         QUEUE_NAME: alvaroqueue
         JOB_STATUS: ${{ job.status }}
-    - name: Get the data sent
+    - name: Get the data sent from last step
       run: echo "The data sent was ${{ steps.send-job-status-to-azure-queue.outputs.data-sent }}"
