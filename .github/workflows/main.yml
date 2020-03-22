@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Send job status with metadata to AzureQueue
       id: send-job-status-to-azure-queue
-      uses: amongil/gh-action-push-result-to-azure-queue@v9
+      uses: amongil/gh-action-push-workflow-last-job-status-to-azure-queue@v0.1.0
       with:
         STORAGE_ACCOUNT_NAME: alvarostorageaccount1234
         STORAGE_ACCOUNT_KEY: ${{ secrets.AZURE_ACTION_STORAGE_ACCOUNT_KEY}}
